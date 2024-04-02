@@ -8,16 +8,16 @@ buttons.forEach(function(button){
         console.log(e);
         console.log(e.target);
         if(e.target.id === 'gray'){
-            body.backgroundColor === e.target.id;
+            body.backgroundColor = e.target.id;
         }
         if(e.target.id === 'white'){
-            body.backgroundColor === e.target.id;
+            body.backgroundColor = e.target.id;
         }
         if(e.target.id === 'blue'){
-            body.backgroundColor === e.target.id;
+            body.backgroundColor = e.target.id;
         }
         if(e.target.id === 'yellow'){
-            body.backgroundColor === e.target.id;
+            body.backgroundColor = e.target.id;
         }
     });
 });
