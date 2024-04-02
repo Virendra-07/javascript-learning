@@ -3,26 +3,22 @@ html{
 }
 h1{
     margin-top: 30px;
-    font-size: 35px;
+    /* margin-left: 22%; */
     text-align: center;
-    color: orangered;
-}
-span{
-    display: block;
 }
 .canvas{
-    margin: 100px auto;
-    width: 60%;
+    margin: 100px auto 100px;
     text-align: center;
+    width: 60%;
 }
 .button{
     height: 100px;
     width: 100px;
-    border: 2px solid black;
+    border: solid black 2px;
     display: inline-block;
 }
-#gray{
-    background-color: gray;
+#grey{
+    background-color: grey;
 }
 #white{
     background-color: white;
@@ -32,4 +28,13 @@ span{
 }
 #yellow{
     background-color: yellow;
+}
+#red{
+    background-color: red;
+}
+#green{
+    background-color: green;
+}
+#purple{
+    background-color: purple;
 }
