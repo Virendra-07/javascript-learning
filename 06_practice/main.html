@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This project is used for setTimeout/Interval and cleanTimeout/Interval</title>
+    <style>
+        h1{
+            margin-top: 30px;
+            font-size: 25px;
+            color: orange;
+            /* align-items: center; */
+            text-align: center;
+        }
+        .a2ndHalf{
+            margin-top: 200px;
+            align-items: center;
+            align-content: center;  
+        }
+        #firstButton{
+            margin-top: 10px;
+            margin-left: 650px;
+        }
+        #secondButton{
+            margin: 10px;
+        }
+        #a1stButton{
+            margin-top: 10px;
+            margin-left: 650px;
+        }
+        #a2ndButton{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="a1sthalf">
+        <h1>This Section for setTimeout and cleanTimeout</h1>
+        <button id="firstButton">Start</button>
+        <button id="secondButton">stop</button>
+    </div>
+    <div class="a2ndHalf">
+        <h1>This section for setInterval and cleanInterval</h1>
+        <button id="a1stButton">Start</button>
+        <button id="a2ndButton">Stop</button>
+    </div>
+    
+</body>
+<script>
+
+    // This all the code for !st half of Div
+    const text = function(){
+        console.log("Uses of setTimeout");
+    }
+
+    // setTimeout(text,1000);
+
+    let timeOutFunction; // here function declearation out side the scope beacause this is use of multiple times
+
+    const startButton = document.querySelector('#firstButton');
+    startButton.addEventListener('click', function(e){
+        timeOutFunction = setTimeout(text, 1000)
+    });
+
+    const stoptButton = document.querySelector('#secondButton');
+    stoptButton.addEventListener('click', function(e){
+        clearTimeout(timeOutFunction);
+        console.log("Stopped");
+    });
+
+    //  This all the code for 2nd half
+    // const intervalMethod = function(){
+    //     console.log("Virendra Kumar");
+    // }
+    const intervalMethod = function(str){
+        console.log( str + "Virendra Kumar");
+    }
+    
+    let cleanIntervalFunction1;
+    const startButton1 = document.querySelector('#a1stButton');
+    startButton1.addEventListener('click', function(e){
+        // setInterval(intervalMethod, 1000);
+        cleanIntervalFunction1 = setInterval(intervalMethod, 1000, "My name is "); // here us can pass argument also
+
+    });
+
+    const stoptButton1 = document.querySelector('#a2ndButton');
+    stoptButton1.addEventListener('click', function(e){
+        clearTimeout(cleanIntervalFunction1);
+        console.log("Stopped");
+    });
+</script>
+</html>
