@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This project is used for setTimeout/Interval and cleanTimeout/Interval</title>
+    <style>
+        h1{
+            margin-top: 30px;
+            font-size: 25px;
+            color: orange;
+            /* align-items: center; */
+            text-align: center;
+        }
+        #firstButton{
+            margin-top: 10px;
+            margin-left: 650px;
+        }
+        #secondButton{
+            margin: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="a1sthalf">
+        <h1>Start should change the background color every second </h1>
+        <button id="firstButton">Start</button>
+        <button id="secondButton">stop</button>
+    </div>
+
+</body>
+<script>
+
+    // generate random color for background color of the body
+    const randomColor = function(){
+        const hexacode = '0123456789ABCDEF';
+        let color = '#'
+        // let generatedRandomFlorValue = Math.floor(Math.random()*16);
+        for( let i=0; i<6; i++){
+            color += hexacode[Math.floor(Math.random()*16)];
+        }
+        return color;
+        // console.log(math.random() * 16);
+    }
+    console.log(randomColor());
+
+
+    // this function change the background color 
+    const changeBackgroundColor = function(){
+            document.body.style.backgroundColor = randomColor(); // here is changes the backgroundcolor of the body
+        }
+
+
+    // here is the function that start the changing background color after clicking start button
+    let changesetInterval
+    const startButton = document.querySelector('#firstButton');
+    startButton.addEventListener('click', function(e){
+        if(!changesetInterval){
+            changesetInterval =  setInterval(changeBackgroundColor, 1000);
+        }
+    });
+
+
+    // here is the function that stop the changing background color after clicking stop button
+    const stopButton = document.querySelector('#secondButton');
+    stopButton.addEventListener('click', function(e){
+        clearInterval(changesetInterval)
+        // for inficiency of code excution use this
+        changesetInterval = null;
+    });
+</script>
+</html>
